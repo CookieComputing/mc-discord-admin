@@ -13,6 +13,10 @@ Currently, this project just supports Azure functions for hosting the Discord
 bot. However, I may decide to support AWS Lambdas and Google Cloud Functions
 later on if I decide that I want to host my services on another platform.
 
+My own server is currently entirely Azure based, but I will do my best to
+separate functionality so that it is easy and extensible for other major
+cloud platforms.
+
 ## Contributions
 If for some reason this project tickles your interests, feel free to send a 
 pull request! I'll probably review it...
