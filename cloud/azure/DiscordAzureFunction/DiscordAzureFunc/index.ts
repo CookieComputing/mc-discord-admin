@@ -7,7 +7,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     if (name) {
         // Add a message to the storage queue, 
         // which is the name passed to the function.
-        context.bindings.msg = name; 
+        context.bindings.msg = name;
         // Send a "hello" response.
         context.res = {
             // status: 200, /* Defaults to 200 */
