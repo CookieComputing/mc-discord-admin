@@ -1,7 +1,7 @@
-import { InteractionType } from "discord-interactions";
+import { InteractionType } from 'discord-interactions';
 
 /**
- * A slash command provided by an admin or otherwise authorized user. This 
+ * A slash command provided by an admin or otherwise authorized user. This
  * is a one way message passed from the serverless function to the bot.
  */
 export interface DiscordCommand {
