@@ -1,4 +1,4 @@
-import nacl from 'tweetnacl';
+import { sign_detached_verify } from 'tweetnacl-ts';
 
 // The authentication module for verifying discord slash commands are coming from
 // the application, and not from some other random traffic.
@@ -10,7 +10,7 @@ import nacl from 'tweetnacl';
  * @param pubKey The application public key
  */
 export function verifySignature(signature: string, timestamp: string, body: string, pubKey: string): boolean {
-	return nacl.sign.detached.verify(
+	return sign_detached_verify(
 		Buffer.from(timestamp + body),
 		Buffer.from(signature, 'hex'),
 		Buffer.from(pubKey, 'hex'),

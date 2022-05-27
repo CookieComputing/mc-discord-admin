@@ -23,5 +23,5 @@
       "connection": "AzureWebJobsStorage"
     }
   ],
-  "scriptFile": "../dist/DiscordAzureFunc/index.js"
+  "scriptFile": "../dist/mc-discord-admin/cloud/azure/DiscordAzureFunction/DiscordAzureFunc/index.js"
 }

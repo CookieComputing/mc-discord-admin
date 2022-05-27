@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build": "tsc",
+    "clean": "tsc --build --clean",
     "watch": "tsc -w",
     "prestart": "npm run build && func extensions install",
     "start": "func start & npm run watch",
