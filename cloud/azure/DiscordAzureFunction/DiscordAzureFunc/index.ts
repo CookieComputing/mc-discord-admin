@@ -3,7 +3,7 @@ import { verifySignature } from '../../../../discord/bot/auth/slash_auth';
 import { publicKey } from '../../../../discord/bot/env';
 import { InteractionType, InteractionResponseType } from 'discord-api-types/v10';
 
-const httpTrigger: AzureFunction = async function(context: Context, req: HttpRequest): Promise<void> {
+const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
 	context.log('HTTP trigger function processed a request.');
 	context.log(req.headers);
 	if (!verifySignature(req.headers['x-signature-ed25519'],
@@ -23,8 +23,7 @@ const httpTrigger: AzureFunction = async function(context: Context, req: HttpReq
 		context.res = {
 			status: 200,
 			body: {
-			type: InteractionResponseType.Pong,
-
+				type: InteractionResponseType.Pong,
 			},
 		};
 		return;
