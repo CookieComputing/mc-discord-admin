@@ -9,7 +9,7 @@ function getEnvVal(val: string | undefined): string {
   return val;
 }
 
-const [appId, token, guildId, publicKey] = [process.env.APP_ID, process.env.DISCORD_ID, process.env.GUILD_ID, process.env.PUBLIC_KEY].map(val => getEnvVal(val));
+const [appId, token, guildId, publicKey] = [process.env.APP_ID, process.env.DISCORD_TOKEN, process.env.GUILD_ID, process.env.PUBLIC_KEY].map(val => getEnvVal(val));
 
 export {
   appId, token, guildId, publicKey,
