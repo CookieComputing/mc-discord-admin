@@ -2,11 +2,15 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-const appId = process.env.APP_ID;
-const token = process.env.DISCORD_ID;
-const guildId = process.env.GUILD_ID;
-const publicKey = process.env.PUBLIC_KEY;
+function getEnvVal(val: string | undefined): string {
+  if (typeof (val) !== 'string') {
+    throw new Error(`Environment variable ${val} is not set, exiting`);
+  }
+  return val;
+}
+
+const [appId, token, guildId, publicKey] = [process.env.APP_ID, process.env.DISCORD_ID, process.env.GUILD_ID, process.env.PUBLIC_KEY].map(val => getEnvVal(val));
 
 export {
-	appId, token, guildId, publicKey,
+  appId, token, guildId, publicKey,
 };
