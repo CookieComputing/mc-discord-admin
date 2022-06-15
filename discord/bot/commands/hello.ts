@@ -1,6 +1,6 @@
 import { SlashCommand, SlashCreator, CommandContext } from 'slash-create';
 
-module.exports = class HelloCommand extends SlashCommand {
+export = class HelloCommand extends SlashCommand {
   constructor(creator: SlashCreator) {
     super(creator, {
       name: 'hello',

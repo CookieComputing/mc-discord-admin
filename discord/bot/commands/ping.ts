@@ -1,6 +1,6 @@
 import { SlashCommand, SlashCreator, CommandContext } from 'slash-create';
 
-module.exports = class PongCommand extends SlashCommand {
+export = class PingCommand extends SlashCommand {
   constructor(creator: SlashCreator) {
     super(creator, {
       name: 'ping',
