@@ -9,6 +9,7 @@
   "dependencies": {
     "@discordjs/rest": "^0.4.1",
     "discord-api-types": "^0.33.5",
+    "discord-interactions": "^3.2.0",
     "dotenv": "^16.0.1",
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
