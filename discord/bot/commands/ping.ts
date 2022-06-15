@@ -4,7 +4,7 @@ import { SlashCommand, SlashCreator, CommandContext } from 'slash-create';
 module.exports = class PongCommand extends SlashCommand {
   constructor(creator: SlashCreator) {
     super(creator, {
-      name: 'pong',
+      name: 'ping',
       description: 'Replies with "Pong!"',
     });
   }
