@@ -8,7 +8,6 @@ export = class HelloCommand extends SlashCommand {
     });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async run(ctx: CommandContext) {
     return `Hello, ${ctx.user.username}!`;
   }
