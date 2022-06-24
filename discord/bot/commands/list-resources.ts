@@ -31,8 +31,8 @@ export class ListResourcesCommand extends SlashCommand {
     });
   }
 
-  async run(ctx: CommandContext) {
+  async run(ctx: CommandContext): Promise<string> {
     console.log(ctx.options);
     return `Hello, ${ctx.user.username}! I'm testing this new entry. You've selected ${ctx.options['hosts']['vendor']}`;
   }
-};
+}

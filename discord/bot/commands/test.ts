@@ -8,7 +8,7 @@ export class TestCommand extends SlashCommand {
     });
   }
 
-  async run(ctx: CommandContext) {
+  async run(ctx: CommandContext): Promise<string> {
     return `Hello, ${ctx.user.username}! I'm testing this new entry`;
   }
-};
+}

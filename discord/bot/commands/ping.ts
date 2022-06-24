@@ -9,7 +9,7 @@ export class PingCommand extends SlashCommand {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async run(_: CommandContext) {
+  async run(_: CommandContext): Promise<string> {
     return 'Pong!';
   }
-};
+}
