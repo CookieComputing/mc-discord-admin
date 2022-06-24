@@ -6,6 +6,7 @@ const creator = new SlashCreator({
   applicationID: appId,
   publicKey: publicKey,
   token: token,
+  maxSignatureTimestamp: 10000,
 });
 
 creator
