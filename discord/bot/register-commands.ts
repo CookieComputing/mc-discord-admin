@@ -1,5 +1,6 @@
-import path = require('path');
-import './commands/ping';
-import './commands/hello';
+import { PingCommand } from './commands/ping';
+import { HelloCommand } from './commands/hello';
+// import { ListResourcesCommand } from './commands/list-resources';
+import { TestCommand } from './commands/test';
 
-export const commandDir = path.join(__dirname, 'commands');
+export const commands = [PingCommand, HelloCommand, TestCommand];

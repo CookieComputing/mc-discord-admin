@@ -1,14 +1,14 @@
 import { SlashCommand, SlashCreator, CommandContext } from 'slash-create';
 
-export class HelloCommand extends SlashCommand {
+export class TestCommand extends SlashCommand {
   constructor(creator: SlashCreator) {
     super(creator, {
-      name: 'hello',
-      description: 'Greets you!',
+      name: 'test',
+      description: 'Greets you with a test!',
     });
   }
 
   async run(ctx: CommandContext) {
-    return `Hello, ${ctx.user.username}!`;
+    return `Hello, ${ctx.user.username}! I'm testing this new entry`;
   }
 };
