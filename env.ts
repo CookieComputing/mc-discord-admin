@@ -1,6 +1,5 @@
 import * as dotenv from 'dotenv';
-
-dotenv.config();
+dotenv.config({ path: `${__dirname}/.env` });
 
 function getEnvVal(val: string | undefined): string {
   if (typeof val !== 'string') {

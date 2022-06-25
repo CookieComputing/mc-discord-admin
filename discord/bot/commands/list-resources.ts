@@ -7,6 +7,7 @@ import {
 import { AzureDispatcher } from '../dispatchers/azure-dispatcher';
 import { AZURE_ENDPOINT } from '../../../env';
 import { CloudVendor } from '../vendors';
+import { fetchBodyString } from '../utils/http-utils';
 
 export class ListResourcesCommand extends SlashCommand {
   constructor(creator: SlashCreator) {
@@ -42,7 +43,9 @@ export class ListResourcesCommand extends SlashCommand {
     const vendor = ctx.options['hosts']['vendor'] as CloudVendor;
     switch (vendor) {
     case CloudVendor.Azure:
-      return new AzureDispatcher(AZURE_ENDPOINT).dispatchListCloudHosts();
+      return fetchBodyString(
+        new AzureDispatcher(AZURE_ENDPOINT).dispatchListCloudHosts(),
+      );
     }
   }
 }
