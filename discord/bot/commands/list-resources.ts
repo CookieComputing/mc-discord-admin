@@ -1,4 +1,11 @@
-import { SlashCommand, SlashCreator, CommandContext, CommandOptionType } from 'slash-create';
+import {
+  SlashCommand,
+  SlashCreator,
+  CommandContext,
+  CommandOptionType,
+} from 'slash-create';
+import { AzureDispatcher } from '../dispatchers/azure-dispatcher';
+import { AZURE_ENDPOINT } from '../../../env';
 import { CloudVendor } from '../vendors';
 
 export class ListResourcesCommand extends SlashCommand {
@@ -32,7 +39,10 @@ export class ListResourcesCommand extends SlashCommand {
   }
 
   async run(ctx: CommandContext): Promise<string> {
-    console.log(ctx.options);
-    return `Hello, ${ctx.user.username}! I'm testing this new entry. You've selected ${ctx.options['hosts']['vendor']}`;
+    const vendor = ctx.options['hosts']['vendor'] as CloudVendor;
+    switch (vendor) {
+    case CloudVendor.Azure:
+      return new AzureDispatcher(AZURE_ENDPOINT).dispatchListCloudHosts();
+    }
   }
 }
