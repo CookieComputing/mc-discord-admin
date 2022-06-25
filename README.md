@@ -17,6 +17,11 @@ My own server is currently entirely Azure based, but I will do my best to
 separate functionality so that it is easy and extensible for other major
 cloud platforms.
 
+## Developer Onboarding
+If you want to try and help out the project, that'd be great! Please read
+the [developer's guide](DEVELOPING.md) to figure out how to onboard onto the
+project.
+
 ## Contributions
 If for some reason this project tickles your interests, feel free to send a 
 pull request! I'll probably review it...
