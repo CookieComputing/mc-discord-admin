@@ -14,7 +14,7 @@ const [appId, token, guildId, publicKey, AZURE_ENDPOINT] = [
   process.env.DISCORD_TOKEN,
   process.env.GUILD_ID,
   process.env.PUBLIC_KEY,
-  process.env.AZURE_ENDPOINT,
+  (process.env.AZURE_ENDPOINT) ? process.env.AZURE_ENDPOINT : 'EMPTY_AZURE_URL',
 ].map((val) => getEnvVal(val));
 
 export { appId, token, guildId, publicKey, AZURE_ENDPOINT };
