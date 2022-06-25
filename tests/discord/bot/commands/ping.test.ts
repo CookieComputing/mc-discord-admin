@@ -1,5 +1,5 @@
 import { CommandContext, SlashCreator } from 'slash-create';
-import PingCommand from '../../../../discord/bot/commands/ping';
+import { PingCommand } from '../../../../discord/bot/commands/ping';
 import { createMock } from 'ts-auto-mock';
 
 test('ping returns pong', () => {

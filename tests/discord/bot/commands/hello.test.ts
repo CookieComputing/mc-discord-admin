@@ -1,5 +1,5 @@
 import { CommandContext, SlashCreator, User } from 'slash-create';
-import HelloCommand from '../../../../discord/bot/commands/hello';
+import { HelloCommand } from '../../../../discord/bot/commands/hello';
 import { createMock } from 'ts-auto-mock';
 
 test('hello returns a user\'s name', () => {
