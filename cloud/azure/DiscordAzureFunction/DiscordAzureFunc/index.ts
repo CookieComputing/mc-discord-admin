@@ -1,6 +1,6 @@
 import { commands } from '../../../../discord/bot/register-commands';
 import { AzureFunctionServer, SlashCreator } from 'slash-create';
-import { appId, publicKey, token } from '../../../../discord/bot/env';
+import { appId, publicKey, token } from '../../../../env';
 
 const creator = new SlashCreator({
   applicationID: appId,
