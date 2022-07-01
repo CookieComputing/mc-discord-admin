@@ -14,6 +14,7 @@ variables = [
   ('AZURE_CLIENT_ID', 'your_id_here'),
   ('AZURE_SUBSCRIPTION_ID', 'your_id_here'),
   ('AZURE_TENANT_ID', 'your_id_here'),
+  ('AZURE_CLIENT_SECRET', 'your_secret_here'),
 ]
 
 with open('.env', 'w') as f:
