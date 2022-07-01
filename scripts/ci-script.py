@@ -11,6 +11,9 @@ variables = [
   ('DISCORD_TOKEN', 'some_discord_token'),
   ('PUBLIC_KEY', 'some_public_key'),
   ('AZURE_ENDPOINT', 'https://localazureendpoint.com'),
+  ('AZURE_CLIENT_ID', 'your_id_here'),
+  ('AZURE_SUBSCRIPTION_ID', 'your_id_here'),
+  ('AZURE_TENANT_ID', 'your_id_here'),
 ]
 
 with open('.env', 'w') as f:

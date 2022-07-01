@@ -1,18 +1,27 @@
+import { ComputeManagementClient } from '@azure/arm-compute';
+import { SubscriptionClient } from '@azure/arm-subscriptions';
 import { AzureFunction, Context, HttpRequest } from '@azure/functions';
+import { AzureCliCredential, ClientSecretCredential } from '@azure/identity';
+import { AZURE_CLIENT_ID, AZURE_TENANT_ID, AZURE_CLIENT_SECRET, AZURE_SUBSCRIPTION_ID } from '../../../../env';
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
-  req: HttpRequest,
+  _req: HttpRequest,
 ): Promise<void> {
-  context.log('HTTP trigger function processed a request.');
-  const name = req.query.name || (req.body && req.body.name);
-  const responseMessage = name
-    ? 'Hello, ' + name + '. This HTTP triggered function executed successfully.'
-    : 'This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.';
+  // const credentials = new ClientSecretCredential(AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET);
+
+  // TODO: Figure out how to set up the service principal...
+  const creds = new AzureCliCredential();
+  const computeClient = new ComputeManagementClient(creds, AZURE_SUBSCRIPTION_ID);
+
+  const vmNames = [];
+  for await (const vm of computeClient.virtualMachines.listAll()) {
+    vmNames.push(vm.name);
+  }
 
   context.res = {
     // status: 200, /* Defaults to 200 */
-    body: responseMessage,
+    body: vmNames,
   };
 };
 
