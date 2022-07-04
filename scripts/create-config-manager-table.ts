@@ -1,4 +1,4 @@
-import { command, run, string, positional, Type } from 'cmd-ts';
+import { command, run, Type, option } from 'cmd-ts';
 import { CloudVendor } from '../discord/bot/vendors';
 
 /**
@@ -19,10 +19,15 @@ const cloudPlatform: Type<string, CloudVendor> = {
 const app = command({
   name: 'create-config-manager-table',
   args: {
-    someArg: positional({ type: cloudPlatform, displayName: 'some arg'}),
+    cloudVendor: option({
+      type: cloudPlatform,
+      long: 'cloud-vendor',
+      short: 'c',
+      description: 'A cloud vendor supported in the project.',
+    }),
   },
-  handler: ({ someArg }) => {
-    console.log({ someArg });
+  handler: ({ cloudVendor }) => {
+    console.log({ cloudVendor });
   },
 });
 
