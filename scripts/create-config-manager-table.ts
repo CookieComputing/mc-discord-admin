@@ -1,3 +1,4 @@
+import { exec } from 'child_process';
 import { command, run, Type, option } from 'cmd-ts';
 import { CloudVendor } from '../discord/bot/vendors';
 
@@ -12,7 +13,11 @@ const cloudPlatform: Type<string, CloudVendor> = {
       return str as CloudVendor;
     }
 
-    throw new Error(`Provided an unsupported cloud vendor: ${str}. Expected: ${Object.values(CloudVendor)}`);
+    throw new Error(
+      `Provided an unsupported cloud vendor: ${str}. Expected: ${Object.values(
+        CloudVendor,
+      )}`,
+    );
   },
 };
 
@@ -27,7 +32,26 @@ const app = command({
     }),
   },
   handler: ({ cloudVendor }) => {
-    console.log({ cloudVendor });
+    switch (cloudVendor) {
+    case CloudVendor.Azure:
+      exec(
+        'cd cloud/azure/DiscordAzureFunction && ts-node ops/create-data-table.ts',
+        (error, stdout) => {
+          if (error) {
+            console.log(
+              `Encountered error in running Azure command: ${error}`,
+            );
+          }
+          if (stdout) {
+            console.log(stdout);
+          }
+        },
+      );
+      break;
+    default: {
+      throw new Error('Given unsupported cloud vendor');
+    }
+    }
   },
 });
 

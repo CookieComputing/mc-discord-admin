@@ -18,6 +18,8 @@ const [
   AZURE_SUBSCRIPTION_ID,
   AZURE_TENANT_ID,
   AZURE_CLIENT_SECRET,
+  AZURE_CONFIG_MANAGER_TABLE,
+  AZURE_ACCOUNT,
 ] = [
   process.env.APP_ID,
   process.env.DISCORD_TOKEN,
@@ -28,6 +30,8 @@ const [
   process.env.AZURE_SUBSCRIPTION_ID,
   process.env.AZURE_TENANT_ID,
   process.env.AZURE_CLIENT_SECRET,
+  process.env.AZURE_CONFIG_MANAGER_TABLE,
+  process.env.AZURE_ACCOUNT
 ].map((val) => getEnvVal(val));
 
 export {
@@ -40,4 +44,6 @@ export {
   AZURE_SUBSCRIPTION_ID,
   AZURE_TENANT_ID,
   AZURE_CLIENT_SECRET,
+  AZURE_CONFIG_MANAGER_TABLE,
+  AZURE_ACCOUNT,
 };

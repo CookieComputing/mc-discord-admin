@@ -15,6 +15,8 @@ variables = [
   ('AZURE_SUBSCRIPTION_ID', 'your_id_here'),
   ('AZURE_TENANT_ID', 'your_id_here'),
   ('AZURE_CLIENT_SECRET', 'your_secret_here'),
+  ('AZURE_CONFIG_MANAGER_TABLE', 'mc-discord-azure-config-manager'),
+  ('AZURE_ACCOUNT', 'your_azure_storage_account'),
 ]
 
 with open('.env', 'w') as f:
